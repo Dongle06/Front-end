@@ -11,7 +11,7 @@ const B1Q2 = () => {
       e => {
         if (e.data.message) {
           console.log(e.data.message);
-          if (e.data.message == "fail") {
+          if (e.data.message == "Fail") {
             setCount("실패");
           } else {
             setCount(e.data.message + "회");
@@ -24,11 +24,6 @@ const B1Q2 = () => {
     );
   }, []);
 
-  const iframePart = () => {
-    return {
-      __html: '<iframe src="./squat.html" width="100%" height="100%"></iframe>'
-    };
-  };
   const navigate = useNavigate();
 
   return (
@@ -51,12 +46,12 @@ const B1Q2 = () => {
           <p>
             경주 전 몸을 풀기 위해 준비 운동을 하려고 해요. <br />
             토끼는 날렵하고 빠른 동물로 유명하죠? <br />
-            토끼를 돕기 위해 준비운동으로 스쿼트 10회를 해볼까요?
+            토끼를 돕기 위해 준비운동으로 팔벌려뛰기 7회를 해볼까요?
           </p>
           {/*<div className="cam" dangerouslySetInnerHTML={iframePart()} />*/}
           <div className="cam">
             <iframe
-              src="http://127.0.0.1:5500/src/components/BOOK1/squat.html"
+              src="https://dongle06.github.io/AI-Pose/Stretching2.html"
               width="100%"
               height="100%"
               allow="camera;microphone"

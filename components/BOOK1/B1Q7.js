@@ -1,6 +1,27 @@
 import "../css/B1Q2.css";
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 const B1Q7 = () => {
+  const [count, setCount] = useState("");
+
+  useEffect(() => {
+    window.addEventListener(
+      "message",
+      e => {
+        if (e.data.message) {
+          //console.log(e.data.message);
+          if (e.data.message == "Fail") {
+            setCount("실패");
+          } else if (e.data.message == "Success") {
+            setCount("성공");
+          }
+
+          //console.log(count);
+        }
+      },
+      false
+    );
+  }, []);
   const navigate = useNavigate();
   return (
     <div className="B1Q2">
@@ -26,10 +47,17 @@ const B1Q7 = () => {
             한답니다. <br />
             다음 자세를 5초간 유지해주세요!
           </p>
-          <div className="cam"></div>
+          <div className="cam">
+            <iframe
+              src="https://dongle06.github.io/AI-Pose/Stretching.html"
+              width="100%"
+              height="100%"
+              allow="camera;microphone"
+            ></iframe>
+          </div>
           <div className="ex"></div>
 
-          <div className="count">성공</div>
+          <div className="count">{count}</div>
         </div>
       </div>
     </div>

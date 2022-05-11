@@ -59,7 +59,7 @@ const B1Q4 = () => {
           <div>
             <div className="cam4">
               <iframe
-                src="https://dooli1971039.github.io/Participatory-fairy-tale-service_test/motion/test14_posnet/OX.html"
+                src="https://dongle06.github.io/AI-Pose/XHandsUp.html"
                 width="100%"
                 height="100%"
                 allow="camera;microphone"
