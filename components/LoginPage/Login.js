@@ -22,12 +22,13 @@ const Login = props => {
     event.preventDefault();
 
     let body = {
-      id: Id,
+      username: Id,
       password: Password
     };
 
     dispatch(loginUser(body)).then(response => {
-      if (response.payload.loginSuccess) {
+      console.log(response);
+      if (response.payload.message == "ok") {
         cookies.save("Id", Id, { path: "/" });
         navigate("/main", { state: { id: Id } });
       } else {
@@ -84,4 +85,5 @@ const Login = props => {
     </div>
   );
 };
+//export default Login;
 export default Auth(Login, false);

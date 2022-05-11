@@ -18,7 +18,7 @@ export default function(SpecificComponent, option, adminRoute = null) {
         console.log(response);
 
         //로그인하지 않은 상태
-        if (!response.payload.isAuth) {
+        if (response.payload.isAuth == "false") {
           if (option) {
             //props.history.push('/login');
             navigate("/login");

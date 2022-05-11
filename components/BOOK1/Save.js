@@ -9,19 +9,20 @@ const Save = () => {
   const Id = cookies.load("Id");
   const onClickHandler = () => {
     let body = {
-      user_id: Id,
-      page: page,
-      Book_id: "1"
+      username: Id,
+      page: page
     };
 
-    axios.post("/api/storage/save", body).then(response => {
-      console.log(response.data);
-      if (response.data.success) {
-        navigate("/main");
-      } else {
-        alert("저장에 실패했습니다.");
-      }
-    });
+    axios
+      .post("https://donglebook.org/storage/storage_list?format=json", body)
+      .then(response => {
+        console.log(response);
+        if (response.status == 201) {
+          navigate("/main");
+        } else {
+          alert("저장에 실패했습니다.");
+        }
+      });
   };
 
   return (

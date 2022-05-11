@@ -7,7 +7,7 @@ const Main = () => {
   const location = useLocation();
   //const { id } = location.state;
   const Id = cookies.load("Id");
-  console.log("state", location.state);
+  //console.log("state", location.state);
 
   return (
     <div className="Main">
@@ -168,5 +168,5 @@ const Main = () => {
     </div>
   );
 };
-
+//export default Main;
 export default Auth(Main, true);

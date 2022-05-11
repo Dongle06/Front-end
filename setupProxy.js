@@ -2,9 +2,10 @@ const { createProxyMiddleware } = require("http-proxy-middleware");
 
 module.exports = function(app) {
   app.use(
-    "/api",
+    ["/api", "/socket.io"],
     createProxyMiddleware({
-      target: "http://localhost:4000",
+      target: "https://donglebook.org",
+      ws: true,
       changeOrigin: true
     })
   );

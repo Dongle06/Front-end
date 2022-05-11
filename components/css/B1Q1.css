@@ -43,6 +43,22 @@
   margin-left: 12rem;
   float: left;
 }
+.paint4 {
+  float: left;
+  margin-left: 3.5rem;
+}
+.img4 {
+  width: 14rem;
+  height: 13rem;
+  margin-bottom: 1rem;
+}
+.cam4 {
+  margin-left: 3rem;
+  border: solid gray;
+  float: left;
+  width: 24rem;
+  height: 25rem;
+}
 .img {
   width: 11rem;
   height: 11rem;
@@ -117,4 +133,16 @@
 .reco {
   color: rgb(92, 91, 91);
   font-size: 1rem;
+}
+#canvas2 {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+#video {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
 }
