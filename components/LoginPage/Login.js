@@ -25,10 +25,11 @@ const Login = props => {
       username: Id,
       password: Password
     };
-
+    console.log(body);
     dispatch(loginUser(body)).then(response => {
       console.log(response);
       if (response.payload.message == "ok") {
+        cookies.save("jwt", response.payload.jwt, { path: "/" });
         cookies.save("Id", Id, { path: "/" });
         navigate("/main", { state: { id: Id } });
       } else {

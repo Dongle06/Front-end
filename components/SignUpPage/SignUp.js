@@ -33,29 +33,45 @@ const SignUp = props => {
     }
 
     let body = {
-      id: Id,
+      username: Id,
       password: Password,
       email: Email
     };
-    dispatch(registerUser(body)).then(response => {
-      if (response.payload.success) {
-        alert("회원가입 완료.");
-        navigate("/login");
-      } else {
-        alert("회원가입에 실패했습니다.");
-      }
-    });
+    if (Id == "") {
+      alert("아이디를 입력해주세요!");
+    } else if (Password == "") {
+      alert("비밀번호를 입력해주세요!");
+    } else if (Email == "") {
+      alert("이메일을 입력해주세요!");
+    } else {
+      dispatch(registerUser(body)).then(response => {
+        console.log(response.payload);
+
+        if (response.payload.username == Id) {
+          alert("회원가입 완료.");
+          navigate("/login");
+        } else {
+          alert("회원가입에 실패했습니다.");
+        }
+      });
+    }
   };
 
   const onDuplicateHandler = event => {
     event.preventDefault();
 
     let body = {
-      id: Id
+      username: Id,
+      password: "",
+      email: ""
     };
     ///api/users/loginDup
     dispatch(loginDupUser(body)).then(response => {
-      if (response.payload.loginSuccess) {
+      console.log(response.payload);
+      if (
+        response.payload.data.username ==
+        "사용자의 username은/는 이미 존재합니다."
+      ) {
         alert("이미 존재하는 아이디입니다.");
       } else {
         alert("사용 가능한 아이디입니다.");

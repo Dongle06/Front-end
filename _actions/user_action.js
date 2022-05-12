@@ -1,5 +1,6 @@
 import axios from "axios";
 import { LOGIN_USER } from "./types";
+
 import { REGISTER_USER, LOGINDUP_USER, AUTH_USER } from "./types";
 export function loginUser(dataTosubmit) {
   const request = axios
@@ -14,7 +15,7 @@ export function loginUser(dataTosubmit) {
 
 export function registerUser(dataSubmit) {
   const request = axios
-    .post("/api/users/register", dataSubmit)
+    .post("https://donglebook.org/api/signup", dataSubmit)
     .then(response => response.data);
 
   return {
@@ -23,9 +24,9 @@ export function registerUser(dataSubmit) {
   };
 }
 
-export function auth() {
+export function auth(dataSubmit) {
   const request = axios
-    .get("https://donglebook.org/api/user/auth")
+    .post("https://donglebook.org/api/user/auth", dataSubmit)
     .then(response => response.data);
 
   return {
@@ -36,8 +37,8 @@ export function auth() {
 
 export function loginDupUser(dataSubmit) {
   const request = axios
-    .post("/api/users/loginDup", dataSubmit)
-    .then(response => response.data);
+    .post("https://donglebook.org/api/signup", dataSubmit)
+    .then(response => response);
 
   return {
     type: LOGINDUP_USER,

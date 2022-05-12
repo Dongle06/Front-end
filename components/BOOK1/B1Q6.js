@@ -1,7 +1,27 @@
 import "../css/B1Q1.css";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 const B1Q6 = () => {
   const navigate = useNavigate();
+  const [pose, setPose] = useState("");
+  useEffect(() => {
+    window.addEventListener(
+      "message",
+      e => {
+        if (e.data.message) {
+          console.log(e.data.message);
+          if (e.data.message == "O") {
+            setPose("포기");
+          } else {
+            setPose("포기안함");
+          }
+
+          //console.log(pose);
+        }
+      },
+      false
+    );
+  }, []);
   return (
     <div className="B1Q1">
       <div>

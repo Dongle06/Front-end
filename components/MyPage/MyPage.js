@@ -20,6 +20,7 @@ const MyPage = () => {
       //console.log(response.data);
       if (response.data.message == "success") {
         cookies.remove("Id");
+        cookies.remove("jwt");
         navigate("/login");
       } else {
         alert("로그아웃 하는데 실패했습니다.");
@@ -92,7 +93,9 @@ const MyPage = () => {
           const save = JSON.stringify(response.data);
           const ParseSave = JSON.parse(save);
           console.log(save);
-          if (response.data != "") {
+          if (Object.keys(ParseSave).length == 1) {
+            setBook1(ParseSave[Object.keys(ParseSave).length - 1].page);
+          } else if (response.data != "") {
             setBook1(ParseSave[Object.keys(ParseSave).length - 1].page);
             setBook2(ParseSave[Object.keys(ParseSave).length - 2].page);
           }

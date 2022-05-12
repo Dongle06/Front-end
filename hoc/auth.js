@@ -1,9 +1,11 @@
 import React from "react";
+
 import { Axios } from "axios";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { auth } from "../_actions/user_action";
 import { useEffect } from "react";
+import cookies from "react-cookies";
 
 export default function(SpecificComponent, option, adminRoute = null) {
   // null => 아무나 출입 가능한 페이지
@@ -14,7 +16,16 @@ export default function(SpecificComponent, option, adminRoute = null) {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     useEffect(() => {
-      dispatch(auth()).then(response => {
+      let cookie = cookies.load("jwt");
+      if (cookie == undefined) {
+        cookie = "";
+      }
+      console.log(JSON.stringify(cookies.load("jwt")));
+      let body = {
+        jwt: cookie
+      };
+      console.log(body);
+      dispatch(auth(body)).then(response => {
         console.log(response);
 
         //로그인하지 않은 상태
@@ -24,13 +35,16 @@ export default function(SpecificComponent, option, adminRoute = null) {
             navigate("/login");
           }
         } else {
-          if (adminRoute && !response.payload.isAdmin) {
+          if (!option) {
+            navigate("/main");
+          }
+          /*if (adminRoute && !response.payload.isAdmin) {
             //props.history.push('/main');
             navigate("/main");
           } else {
             //props.history.push('/main');
-            navigate("/main");
-          }
+            //navigate("/main");
+          }*/
         }
       });
     }, []);
