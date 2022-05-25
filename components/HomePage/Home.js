@@ -2,6 +2,7 @@ import "./Home.css";
 import { useNavigate } from "react-router-dom";
 const Home = () => {
   const navigate = useNavigate();
+
   return (
     <div className="Home">
       <div>
@@ -17,7 +18,7 @@ const Home = () => {
             navigate("/login");
           }}
         >
-          로그인
+          시작하기
         </button>
       </div>
     </div>

@@ -1,46 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap");
 .MyPage {
-  padding-left: 3rem;
-  margin: 1rem;
+  font-family: "paybooc-Light", sans-serif;
   display: flex;
+  width: 100vw;
+  height: 100vh;
 }
 .header {
   margin-top: 3rem;
   clear: both;
   height: 5rem;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+
+  margin-bottom: 3vh;
 }
 .load {
-  margin-top: 0.8rem;
-  margin-bottom: 0;
+  font-size: 1.2vw;
 }
 
 .User_info {
+  height: 25vh;
   float: left;
   margin-left: 3rem;
   padding-top: 1rem;
   margin-bottom: 2rem;
 }
 .user_img2 {
-  width: 8rem;
+  width: 8vw;
   float: left;
 }
 .user_id2 {
-  font-size: 2.5rem;
+  font-size: 2.5vw;
   margin-left: 1.7rem;
   margin-top: 1.7rem;
   margin-bottom: 0;
   font-weight: 600;
   float: left;
 }
-.user_email {
+.user_ch {
+  width: 30vw;
+  float: right;
+  margin-right: 1.5vw;
+}
+.user_info {
   float: left;
-  font-size: 2.5rem;
+}
+.BookSave {
+  height: 28vh;
+}
+.user_email {
+  clear: both;
+  float: left;
+  font-size: 2.5vw;
   margin-left: 1.7rem;
   margin-top: 0.5rem;
   font-weight: 600;
 }
-.header2 {
+.header3 {
   margin-top: 1rem;
   margin-bottom: 2rem;
   margin-left: 3rem;
@@ -67,19 +81,20 @@
   float: left;
 }
 .logout {
-  margin-left: 33rem;
   color: rgb(133, 132, 132);
   font-size: 1.5rem;
-  float: left;
-  clear: both;
+
+  float: right;
   font-weight: 500;
   cursor: pointer;
 }
 .withdraw {
+  float: right;
   margin-left: 1rem;
   color: rgb(133, 132, 132);
+
   font-size: 1.5rem;
-  float: left;
+
   font-weight: 500;
   cursor: pointer;
 }
@@ -90,9 +105,10 @@
   background-color: #0e5079;
   color: #ffffff;
   padding: 0.7rem 0.7rem;
-  width: 10rem;
+  width: 10vw;
   border-radius: 1rem;
-  font-size: 2rem;
+  font-size: 2vw;
+  margin-left: 30vw;
   font-family: "paybooc-Light", sans-serif;
   box-shadow: 0 1.5rem 3.5rem rgba(0, 0, 0, 0.2);
   text-decoration: none;

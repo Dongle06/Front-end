@@ -1,26 +1,26 @@
 .Home {
-  position: relative;
+  font-family: "paybooc-Light", sans-serif;
   background-color: #002943;
   width: 100vw;
   height: 100vh;
   text-align: center;
 }
 .Title {
-  height: 20rem;
+  height: 30vh;
+  width: 30vw;
   margin: 0;
 }
 .img1 {
-  width: 50rem;
+  width: 40vw;
+  height: 40vh;
 }
 .button_div {
-  margin-top: 3rem;
+  margin-top: 2rem;
   left: 0;
   right: 0;
   /*position: fixed;*/
-  bottom: 4rem;
 }
 .Start {
-  bottom: 3rem;
   border: none;
   -webkit-text-stroke: 0.1rem #6e757a;
   color: #fdf30c;

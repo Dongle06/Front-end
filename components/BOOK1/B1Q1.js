@@ -1,4 +1,5 @@
 import "../css/B1Q1.css";
+import { createBrowserHistory } from "history";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Q1 from "./sounds/Q1.mp3";
@@ -31,6 +32,36 @@ const B1Q1 = () => {
   const [audio, playing, toggle] = useAudio(Q1);
   const navigate = useNavigate();
   const [value, setValue] = useState("");
+  const history = createBrowserHistory();
+  useEffect(() => {
+    const listenBackEvent = () => {
+      // 뒤로가기 할 때 수행할 동작을 적는다
+      audio.pause();
+    };
+
+    const unlistenHistoryEvent = history.listen(({ action }) => {
+      if (action === "POP") {
+        listenBackEvent();
+      }
+    });
+
+    return unlistenHistoryEvent;
+  }, [
+    // effect에서 사용하는 state를 추가
+  ]);
+  useEffect(() => {
+    let unlisten = history.listen(location => {
+      if (history.action === "PUSH") {
+      }
+      if (history.action === "POP") {
+      }
+    });
+
+    return () => {
+      unlisten();
+    };
+  }, [history]);
+
   const { listen, listening, stop } = useSpeechRecognition({
     onResult: result => {
       // 음성인식 결과가 value 상태값으로 할당됩니다.
@@ -49,18 +80,22 @@ const B1Q1 = () => {
   useEffect(() => {
     if (value.includes("빵빵")) {
       console.log("빵빵");
+      {
+        stop();
+      }
       setTimeout(function() {
         navigate("/B1Q1_R");
       }, 2000);
     } else if (value.includes("콩콩")) {
       console.log("콩콩");
+      stop();
+      setTimeout(function() {
+        navigate("/B1Q1_L");
+      }, 2000);
     } else {
     }
   }, [value]);
-  /*
-  const again = url => {
-    [playing, toggle] = useAudio(url);
-  };*/
+
   return (
     <div className="B1Q1">
       <div>
@@ -68,6 +103,7 @@ const B1Q1 = () => {
           className="quit"
           onClick={() => {
             audio.pause();
+            stop();
             navigate("/Save", { state: { page: "B1Q1" } });
           }}
         >
