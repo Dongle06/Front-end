@@ -8,7 +8,7 @@
 ### 주요 UI
 ![](https://velog.velcdn.com/images/yeah7598/post/a846c36c-47e3-41c0-8b3a-818e9f4e87a4/image.png)
 
-
+### 파일 설명
 1. _actions,_reducers: 상태관리 라이브러리인 리덕스 관련 폴더
  * _actions , user_action.js에서 서버와 연결하여 테스트함
 
