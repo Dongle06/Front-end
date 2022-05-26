@@ -67,7 +67,6 @@ const B1Q4 = () => {
       "message",
       e => {
         if (e.data.message) {
-          console.log(e.data.message);
           if (e.data.message == "HandsUp") {
             setPose("반칙한다.");
             audio.pause();
@@ -84,8 +83,6 @@ const B1Q4 = () => {
           } else {
             setPose(e.data.message);
           }
-
-          console.log(pose);
         }
       },
       false

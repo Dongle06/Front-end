@@ -63,7 +63,6 @@ const B1Q2 = () => {
       "message",
       e => {
         if (e.data.message) {
-          console.log(e.data.message);
           if (e.data.message == "Fail") {
             setCount("실패");
             setTimeout(function() {
@@ -74,8 +73,6 @@ const B1Q2 = () => {
           } else {
             setCount(e.data.message + "회");
           }
-
-          console.log(count);
         }
       },
       false

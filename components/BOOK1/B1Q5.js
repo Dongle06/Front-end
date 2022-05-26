@@ -67,7 +67,6 @@ const B1Q5 = () => {
       "message",
       e => {
         if (e.data.message) {
-          console.log(e.data.message);
           if (
             e.data.message == "Angry" ||
             e.data.message == "Disgust" ||
@@ -75,23 +74,21 @@ const B1Q5 = () => {
           ) {
             setPose("화남");
             setTimeout(function() {
-              navigate("/B1Q13_A");
+              navigate("/B1Q5_A");
             }, 2000);
           } else if (e.data.message == "Happy" || e.data.message == "Neutral") {
             setPose("기쁨");
             setTimeout(function() {
-              navigate("/B1Q13_H");
+              navigate("/B1Q5_H");
             }, 2000);
           } else if (e.data.message == "Sad" || e.data.message == "Surprise") {
             setPose("슬픔");
             setTimeout(function() {
-              navigate("/B1Q13_S");
+              navigate("/B1Q5_S");
             }, 2000);
           } else {
             setPose("표정을 다시 한 번 지어주세요.");
           }
-
-          console.log(pose);
         }
       },
       false
@@ -128,7 +125,7 @@ const B1Q5 = () => {
             <div className="cam5">
               <iframe
                 frameBorder="0"
-                src="https://yoonjiy.github.io/tfjs-emotion-detection/"
+                src="https://dongle06.github.io/AI-Emotion/"
                 width="100%"
                 height="100%"
                 allow="camera;microphone"

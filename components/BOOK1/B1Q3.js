@@ -67,20 +67,17 @@ const B1Q3 = () => {
     toggle();
   }, []);
   useEffect(() => {
-    console.log(playing);
     if (!playing) {
       listen({ interimResults: false });
     }
   }, [playing]);
   useEffect(() => {
     if (value.includes("빵빵")) {
-      console.log("빵빵");
       stop();
       setTimeout(function() {
         navigate("/B1Q3_R");
       }, 2000);
     } else if (value.includes("콩콩")) {
-      console.log("콩콩");
       stop();
       setTimeout(function() {
         navigate("/B1Q3_L");

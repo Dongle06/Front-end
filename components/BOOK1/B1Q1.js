@@ -72,14 +72,12 @@ const B1Q1 = () => {
     toggle();
   }, []);
   useEffect(() => {
-    console.log(playing);
     if (!playing) {
       listen({ interimResults: false });
     }
   }, [playing]);
   useEffect(() => {
     if (value.includes("빵빵")) {
-      console.log("빵빵");
       {
         stop();
       }
@@ -87,7 +85,6 @@ const B1Q1 = () => {
         navigate("/B1Q1_R");
       }, 2000);
     } else if (value.includes("콩콩")) {
-      console.log("콩콩");
       stop();
       setTimeout(function() {
         navigate("/B1Q1_L");

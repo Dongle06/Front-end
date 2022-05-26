@@ -45,25 +45,20 @@ const MyPage = () => {
   useLayoutEffect(() => {
     if (book1 != "") {
       onCreate(book1, BookId1);
-      console.log(book1, BookId1);
     }
   }, [book1]);
   useLayoutEffect(() => {
     if (book2 != "") {
       onCreate(book2, BookId2);
-      console.log(book2);
     }
   }, [book2]);
-  useLayoutEffect(() => {
-    console.log(BookList);
-  }, [BookList]);
+  useLayoutEffect(() => {}, [BookList]);
 
   useLayoutEffect(() => {
     axios
       .get("https://donglebook.org/storage/findUsername/" + Id + "?format=json")
       .then(response => {
         if (response.status == 200) {
-          console.log(response.data);
           const save = JSON.stringify(response.data);
           const ParseSave = JSON.parse(save);
           if (Object.keys(ParseSave).length == 1) {

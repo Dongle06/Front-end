@@ -68,14 +68,12 @@ const B1Q12 = () => {
     toggle();
   }, []);
   useEffect(() => {
-    console.log(playing);
     if (!playing) {
       listen({ interimResults: false });
     }
   }, [playing]);
   useEffect(() => {
     if (value.includes("빵빵")) {
-      console.log("빵빵");
       {
         stop();
       }
@@ -83,7 +81,6 @@ const B1Q12 = () => {
         navigate("/B1Q12_R");
       }, 2000);
     } else if (value.includes("콩콩")) {
-      console.log("콩콩");
       stop();
       setTimeout(function() {
         navigate("/B1Q12_L");
@@ -118,19 +115,11 @@ const B1Q12 = () => {
             아래와 같이 말해보세요!
           </p>
           <div className="paint1">
-            <img
-              className="img"
-              alt="book"
-              src={require("../img/rabbit2.png")}
-            />
+            <img className="img" alt="book" src={require("../img/sing.png")} />
             <div className="text_r">노래를 부르려면 "빵빵"</div>
           </div>
           <div className="paint2">
-            <img
-              className="img"
-              alt="book"
-              src={require("../img/turtle2.png")}
-            />
+            <img className="img" alt="book" src={require("../img/xsing.png")} />
             <div className="text_t">부르지 않으려면 "콩콩"</div>
           </div>
           <div>

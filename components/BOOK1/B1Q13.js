@@ -24,7 +24,7 @@ const useAudio = url => {
   return [audio, playing, toggle];
 };
 
-const B1Q5 = () => {
+const B1Q13 = () => {
   const [audio, playing, toggle] = useAudio(Q5);
   useEffect(() => {
     toggle();
@@ -103,7 +103,7 @@ const B1Q5 = () => {
           className="quit"
           onClick={() => {
             audio.pause();
-            navigate("/Save", { state: { page: "B1Q5" } });
+            navigate("/Save", { state: { page: "B1Q13" } });
           }}
         >
           <img
@@ -126,7 +126,8 @@ const B1Q5 = () => {
           <div className="camOut">
             <div className="cam5">
               <iframe
-                src="https://yoonjiy.github.io/tfjs-emotion-detection/"
+                frameBorder="0"
+                src="https://dongle06.github.io/AI-Emotion/"
                 width="100%"
                 height="100%"
                 allow="camera;microphone"
@@ -139,4 +140,4 @@ const B1Q5 = () => {
     </div>
   );
 };
-export default B1Q5;
+export default B1Q13;

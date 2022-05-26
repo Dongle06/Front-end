@@ -20,13 +20,12 @@ export default function(SpecificComponent, option, adminRoute = null) {
       if (cookie == undefined) {
         cookie = "";
       }
-      console.log(JSON.stringify(cookies.load("jwt")));
+
       let body = {
         jwt: cookie
       };
-      console.log(body);
+
       dispatch(auth(body)).then(response => {
-        console.log(response);
         //cookies.save(response.payload.email);
         //로그인하지 않은 상태
         if (response.payload.isAuth == "false") {
@@ -39,13 +38,6 @@ export default function(SpecificComponent, option, adminRoute = null) {
             navigate("/main");
           }
           cookies.save("email", response.payload.email, { path: "/" });
-          /*if (adminRoute && !response.payload.isAdmin) {
-            //props.history.push('/main');
-            navigate("/main");
-          } else {
-            //props.history.push('/main');
-            //navigate("/main");
-          }*/
         }
       });
     }, []);

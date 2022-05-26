@@ -64,7 +64,6 @@ const B1Q10 = () => {
       "message",
       e => {
         if (e.data.message) {
-          console.log(e.data.message);
           if (e.data.message == "O") {
             setPose("사용함");
             audio.pause();
