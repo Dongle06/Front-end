@@ -18,7 +18,7 @@
 
 ### 파일 설명
 1. _actions,_reducers: 상태관리 라이브러리인 리덕스 관련 폴더
- ** _actions , user_action.js**: 서버와 연결하여 테스트함
+* ** _actions , user_action.js**: 서버와 연결하여 테스트함
 
 2. component : 페이지들을 모아 놓은 폴더
 * **BOOK1**: 토끼와 거북이 관련 페이지
